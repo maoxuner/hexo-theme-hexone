@@ -1,0 +1,10 @@
+<%-
+  (post.categories && post.categories.length)
+  ? list_categories(post.categories, {
+    show_count: false,
+    class: 'category',
+    style: 'none',
+    separator: '►'
+  })
+  : ''
+%>

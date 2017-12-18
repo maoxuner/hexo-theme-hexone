@@ -1,0 +1,4 @@
+<p class="info">
+  <span class="info-item"><%= __('date') %>: <%- partial('date', {post: post}) %></span>
+  <% if(post.layout != 'page'){ %><span class="info-item"><%= __('category') %>: <%- partial('category', {post: post}) %></span><% } %>
+</p>

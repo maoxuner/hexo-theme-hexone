@@ -1,0 +1,11 @@
+<% if(site.tags.length){ %>
+  <div id="widget-tag" class="widget widget-tag">
+    <h3 class="widget-title"><a href="<%= url_for(config.tag_dir) %>"><%= __('tag') %></a></h3>
+    <div class="widget-content">
+      <%- tagcloud(site.tags, {
+        min_font: 12,
+        max_font: 18
+      }) %>
+    </div>
+  </div>
+<% } %>

@@ -1,0 +1,21 @@
+<%
+  var slug;
+  if(post.hasOwnProperty('slug') && /\w+/.test(post.slug)){
+    slug = post.slug;
+  }
+  else if(post.hasOwnProperty('date')){
+    slug = post.date.unix();
+  }
+  else{
+    slug = 'hexone';
+  }
+
+  if(typeof(parts) == 'undefined'){
+    var parts = ['title', 'info', 'content', 'copyright', 'tag', 'navbar', 'comment'];
+  }
+%>
+<article id="<%= post.layout %>-<%= slug %>" class="article">
+  <% parts.forEach(function(part){ %>
+    <%- partial('post/'+part, {post: post}) %>
+  <% }); %>
+</article>

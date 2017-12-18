@@ -1,0 +1,26 @@
+<% (function(){ %>
+  <%
+    var jsonStr = strip_html(post.content.replace(/\w/, ''));
+    try{
+      var data = eval('('+jsonStr+')');
+    }
+    catch(e){
+      console.log('wrong json format');
+      console.log(e);
+      return;
+    }
+  %>
+  <article id="page-moods" class="page page-moods">
+    <h1><%= __('moods') %></h1>
+    <ul class="timeline">
+      <% data.forEach(function(item){ %>
+        <li class="timeline-item">
+          <h3 class="timeline-title"><%- item.date %></h3>
+          <div class="timeline-content">
+            <p><%- item.content %></p>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  </article>
+<% })(); %>

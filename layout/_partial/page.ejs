@@ -1,0 +1,5 @@
+<% if(post.hasOwnProperty('type')){ %>
+  <%- partial('page/'+post.type, {post: post}) %>
+<% }else{ %>
+  <%- partial('article', {post: post, parts: ['title', 'content', 'comment']}) %>
+<% } %>

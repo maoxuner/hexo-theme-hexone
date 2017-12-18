@@ -1,0 +1,6 @@
+<div id="widget-archive" class="widget widget-archive">
+  <h3 class="widget-title"><a href="<%= url_for(config.archive_dir) %>"><%= __('archive') %></a></h3>
+  <div class="widget-content">
+    <%- list_archives({format: 'MM YYYY'}) %>
+  </div>
+</div>

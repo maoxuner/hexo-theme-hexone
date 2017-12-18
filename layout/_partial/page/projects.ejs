@@ -1,0 +1,14 @@
+<article id="page-projects" class="page page-projects">
+  <h1><%= __('projects') %></h1>
+  <div id="project-box" class="project-box">
+    <div class="loading">
+      <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</article>
+<% if(Object.keys(theme.projects).length > 0){ %>
+  <script type="text/javascript">
+    window['hexone_projects'] = <%- JSON.stringify(theme.projects) %>;
+  </script>
+<% } %>

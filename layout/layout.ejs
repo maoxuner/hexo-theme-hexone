@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="<%= config.language || 'en' %>">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%- partial('_partial/head')%>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="bg">
+  <div class="container">
+    <%- partial('_partial/header') %>
+    <div class="row">
+      <section id="main" class="col-md-9 main"><%- body %></section>
+      <aside class="col-md-3 sidebar"><%- partial('_partial/sidebar') %></aside>
+    </div>
+    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+  </div>
+  <%- partial('_partial/foot', null, {cache: !config.relative_link}) %>
+</body>
+</html>

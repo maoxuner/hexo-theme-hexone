@@ -1,0 +1,39 @@
+<header id="header" class="header">
+  <div class="site-info hidden-xs">
+    <p class="title"><%= config.title %></p>
+    <p class="subtitle"><%= config.subtitle %></p>
+    <p class="author">by <%= config.author %></p>
+  </div>
+  <div class="nav-box">
+    <nav id="navbar" class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hexone-navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="<%= url_for(config.root) %>" class="navbar-brand visible-xs-inline"><%= config.title %></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="hexone-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <% for(var name in theme.menu){ %>
+              <% if(name != 'post'){ %>
+                <li class="<%= is_current(theme.menu[name]) ? 'active' : '' %>"><a href="<%= url_for(theme.menu[name]) %>"><%= __(name) %></a></li>
+              <% }else if(theme.menu[name] && is_post()){ %>
+                <li class="active"><a><%= page.title %></a></li>
+              <% } %>
+            <% } %>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://gitee.com/maoxuner/hexo-theme-hexone/" target="_blank" class="theme-link">HexOne</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+</header>

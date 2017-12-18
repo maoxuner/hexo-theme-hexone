@@ -1,0 +1,41 @@
+<%
+var widgets;
+
+if(is_home()){
+  widgets = ['search', 'profile', 'category', 'tag', 'archive'];
+}
+else if(is_archive() || is_tag()){
+  widgets = ['search', 'category', 'tag', 'archive'];
+}
+else if(is_post()){
+  widgets = ['search', 'toc'];
+}
+else if(page.layout == 'page'){
+  if(page.hasOwnProperty('widgets')){
+    widgets = page.widgets;
+  }
+  else if(page.hasOwnProperty('type')){
+    switch(page.type){
+      case 'categories':
+      case 'tags':
+        widgets = ['search', 'category', 'tag', 'archive'];
+        break;
+      case 'projects':
+      case 'moods':
+        widgets = ['search', 'profile'];
+        break;
+      default:
+        widgets = ['search', 'toc'];
+    }
+  }
+  else{
+    widgets = ['search', 'toc'];
+  }
+}
+else{
+  widgets = ['search', 'profile', 'category', 'tag', 'archive'];
+}
+%>
+<% widgets.forEach(function(widget){ %>
+  <%- partial('widget/'+widget, null, {cache: !config.relative_link && widget != 'toc'}) %>
+<% }); %>

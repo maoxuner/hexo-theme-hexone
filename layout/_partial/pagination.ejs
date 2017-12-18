@@ -1,0 +1,58 @@
+<%
+  function page_url(i){
+    var path = [page.base];
+    if(i != 1){
+      path.push(config.pagination_dir);
+      path.push(i);
+    }
+    return url_for(path.join('/'));
+  }
+
+  var full_group = 5;
+  var half_group = Math.floor(full_group / 2);
+  var current_page = page.current;
+  var total_page = page.total;
+
+  var group_start = current_page - half_group;
+  if(group_start > total_page - full_group + 1){
+    group_start = total_page - full_group + 1;
+  }
+  if(group_start < 1){
+    group_start = 1;
+  }
+
+  var group_end = group_start + full_group - 1;
+  if(current_page < full_group){
+    group_end = full_group
+  }
+  if(group_end > total_page){
+    group_end = total_page;
+  }
+%>
+<nav class="paginator" aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="<%= page.prev == 0 ? 'disabled' : '' %>"><a href="<%= page.prev == 0 ? 'javascript: void(0);' : url_for(page.prev_link) %>" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+    <% if(group_start < 3){ %>
+      <% for(var i=1; i<current_page; i++){ %>
+      <li><a href="<%= page_url(i) %>"><%= i %></a></li>
+      <% } %>
+    <% }else{ %>
+      <li><a href="<%= page_url(1) %>">1</a>
+      <li><span>...</span></li>
+      <% for(var i=group_start; i<current_page; i++){ %>
+        <li><a href="<%= page_url(i) %>"><%= i %></a></li>
+      <% } %>
+    <% } %>
+    <li class="active"><span><%= current_page %><span class="sr-only">(current)</span></span></li>
+    <% for(var i=current_page+1; i<=group_end; i++){ %>
+      <li><a href="<%= page_url(i) %>"><%= i %></a></li>
+    <% } %>
+    <% if(group_end < total_page){ %>
+      <% if(group_end < total_page - 1){ %>
+        <li><span>...</span></li>
+      <% } %>
+      <li><a href="<%= page_url(total_page) %>"><%= total_page %></a></li>
+    <% } %>
+    <li class="<%= page.next == 0 ? 'disabled' : '' %>"><a href="<%= page.next == 0 ? 'javascript: void(0);' : url_for(page.next_link) %>">&raquo;</a></li>
+  </ul>
+</nav>

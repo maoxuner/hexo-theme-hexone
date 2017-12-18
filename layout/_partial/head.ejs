@@ -1,0 +1,31 @@
+<%
+  var title = page.title;
+  if(is_archive()){
+    title = __('archive');
+    if(is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    }
+    else if(is_year()){
+      title += ': ' + page.year;
+    }
+  }
+  else if(is_category()){
+    title = __('category') + ': ' + page.category;
+  }
+  else if(is_tag()){
+    title = __('tag') + ': ' + page.tag;
+  }
+%>
+<title><% if(title){ %><%= title %> - <% } %><%= config.title %></title>
+<meta name="keywords" content="<%= theme.keywords || config.subtitle %>">
+<meta name="description" content="<%= theme.description || config.description %>">
+<meta name="author" content="<%= config.author %>">
+<meta name="generator" content="hexo">
+<meta name="jsonContent" content="<%= url_for('content.json') %>">
+<%- theme.favicon ? favicon_tag(theme.favicon) : '' %>
+<%- config.feed ? feed_tag(config.feed.path) : '' %>
+
+<!-- Bootstrap -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<%- css('css/style') %>

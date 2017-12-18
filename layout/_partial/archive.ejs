@@ -1,0 +1,6 @@
+<div class="archive">
+  <% page.posts.each(function(post){ %>
+    <%- partial('article', {post: post, parts: ['title', 'info', 'excerpt', 'tag', 'more']}) %>
+  <% }) %>
+</div>
+<%- partial('pagination') %>

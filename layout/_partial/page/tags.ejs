@@ -1,0 +1,12 @@
+<div id="page-tags" class="page page-tags">
+  <h1><%= __('tag') %></h1>
+  <div class="tag-box">
+    <%- tagcloud(site.tags, {
+      min_font: 14,
+      max_font: 20,
+      color: true,
+      start_color: '#5a5e59',
+      end_color: '#d3d923'
+    }) %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div id="widget-profile" class="widget widget-profile">
+  <div class="widget-content">
+    <div class="profile">
+      <a href="<%= url_for('about.html') %>"><img src="<%= theme.avatar %>" class="avatar"></a>
+      <span class="author"><%= config.author %></span>
+    </div>
+    <ul class="social-list clearfloat">
+      <% for(var name in theme.social){ %>
+        <li class="social-list-item" style="width: <%= 1/Object.keys(theme.social).length*100 %>%;"><a href="<%= theme.social[name] %>" class="link"><i class="fa <%= theme.social_icons[name] %>"></i><%= name %></a></li>
+      <% } %>
+    </ul>
+  </div>
+</div>

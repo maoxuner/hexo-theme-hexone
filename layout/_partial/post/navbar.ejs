@@ -1,0 +1,12 @@
+<% if (post.prev || post.next){ %>
+  <nav aria-label="pager" class="nav-pager">
+    <ul class="pager">
+      <% if(post.prev){ %>
+        <li class="previous"><a href="<%- url_for(post.prev.path) %>"><span aria-hidden="true">&larr;</span> <%= post.prev.title || __('prev') %></a></li>
+      <% } %>
+      <% if(post.next){ %>
+        <li class="next"><a href="<%- url_for(post.next.path) %>"><%= post.next.title || __('next') %> <span aria-hidden="true">&rarr;</span></a></li>
+      <% } %>
+    </ul>
+  </nav>
+<% } %>

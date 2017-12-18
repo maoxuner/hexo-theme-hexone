@@ -1,0 +1,29 @@
+menu:
+  home: /
+  archive: archives
+  friendlink: links.html
+  projects: projects.html
+  moods: moods.html
+  about: about.html
+  post: true
+keywords: hexo,hexone
+description: a theme based on bootstrap
+favicon: img/cat_ghost_16px.ico
+avatar: img/avatar.png
+
+social:
+  GitHub: https://github.com/maoxuner
+  Gitee: https://gitee.com/maoxuner
+  Weibo: https://weibo.com/maoxuner
+social_icons:
+  GitHub: fa-github
+  Gitee: fa-git-square
+  Weibo: fa-weibo
+
+projects:
+  gitee: maoxuner
+
+less:
+  compress: false
+  paths:
+    - source/css
