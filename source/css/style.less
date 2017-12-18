@@ -76,6 +76,7 @@ a, a:hover, a:active, a:link, a:visited{
 
 .main{
     .article{
+        overflow: hidden;
         h1{
             font-size: 30px;
         }
@@ -93,6 +94,38 @@ a, a:hover, a:active, a:link, a:visited{
         }
         h6{
             font-size: 14px;
+        }
+        p{
+            text-indent: 2em;
+        }
+        table{
+            width: 100%;
+            tr{
+                border-top: 1px solid #999;
+                border-left: 1px solid #999;
+                border-right: 1px solid #999;
+                th{
+                    font-weight: bold;
+                }
+                th, td{
+                    font-size: 14px;
+                    line-height: 20px;
+                    border-right: 1px solid #999;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                }
+                th:last-child, td:last-child{
+                    border-right: none;
+                }
+            }
+            tr:last-child{
+                border-bottom: 1px solid #999;
+            }
+        }
+        img{
+            display: block;
+            max-width: 100%;
+            margin: auto;
         }
         > .title{
             font-weight: bold;
@@ -515,6 +548,9 @@ a, a:hover, a:active, a:link, a:visited{
     overflow-x: auto;
     background: #474949;
     color: #d1d9e1;
+    table, tr, th, td{
+        border: none !important;
+    }
     pre{
         color: unset;
         background-color: unset;
@@ -523,7 +559,7 @@ a, a:hover, a:active, a:link, a:visited{
         margin-bottom: 0;
     }
     .gutter{
-        border-right: 1px solid #666;
+        border-right: 1px solid #666 !important;
     }
     .code{
         .line{
