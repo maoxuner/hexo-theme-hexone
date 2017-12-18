@@ -9,13 +9,14 @@
   else{
     slug = 'hexone';
   }
+  var postId = post.layout + '-' + slug;
 
   if(typeof(parts) == 'undefined'){
     var parts = ['title', 'info', 'content', 'copyright', 'tag', 'navbar', 'comment'];
   }
 %>
-<article id="<%= post.layout %>-<%= slug %>" class="article">
+<article id="<%= postId %>" class="article">
   <% parts.forEach(function(part){ %>
-    <%- partial('post/'+part, {post: post, slug: slug}) %>
+    <%- partial('post/'+part, {post: post, postId: postId}) %>
   <% }); %>
 </article>
