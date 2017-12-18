@@ -16,6 +16,6 @@
 %>
 <article id="<%= post.layout %>-<%= slug %>" class="article">
   <% parts.forEach(function(part){ %>
-    <%- partial('post/'+part, {post: post}) %>
+    <%- partial('post/'+part, {post: post, slug: slug}) %>
   <% }); %>
 </article>

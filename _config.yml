@@ -20,6 +20,9 @@ social_icons:
   Gitee: fa-git-square
   Weibo: fa-weibo
 
+comments:
+  disqus: maoxuner
+
 projects:
   gitee: maoxuner
 
