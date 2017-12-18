@@ -2,6 +2,8 @@
 
 简约的[Hexo](https://hexo.io/)主题[HexOne](https://gitee.com/maoxuner/hexo-theme-hexone/)（仿[Trapecho](http://blog.gregwym.info/)）
 
+![预览图](source/img/screenshots/home.png)
+
 ## 安装
 
 ### 依赖
@@ -33,19 +35,31 @@ npm install hexo-generator-json-content --save
 
 ## 特色
 
+### 导航条置顶
+
+滚动页面后导航条置顶
+
+![导航条置顶](source/img/screenshots/menufixtop.png)
+
+### 文章搜索
+
+站内搜索
+
+站内搜索使用了`hexo-generator-json-content`插件来生成文章内容的json文件。相比于搜索引擎搜索，这个方案能够搜索到站内的所有文章和单页，但是会消耗一定的带宽。生成文章时，该插件会一定程度上增加处理的时间，目前看来影响并不大。
+
+![站内搜索](source/img/screenshots/search.png)
+
 ### 开源项目展示
 
 只支持[码云](https://gitee.com/)开源项目的展示。如果要支持[Github](https://github.com/)等，可修改[source/js/main.js](source/js/main.js)文件中的相关代码。
+
+![开源项目展示](source/img/screenshots/projects.png)
 
 ### 心情
 
 有时候只是想三言两语说说自己的心情，不想每次都创建一篇文章，但是又想有个好的展示效果。于是便有了这个功能——心情，类似于说说/微博的功能。修改对应的文章（source/pages/moods.md），按照json格式添加即可。
 
-### 文章搜索
-
-**站内搜索**
-
-站内搜索使用了`hexo-generator-json-content`插件来生成文章内容的json文件。相比于搜索引擎搜索，这个方案能够搜索到站内的所有文章，但是会消耗一定的带宽。生成文章时，该插件会一定程度上增加处理的时间，目前看来影响并不大。
+![心情](source/img/screenshots/moods.png)
 
 ## 备注
 
