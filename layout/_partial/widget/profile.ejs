@@ -1,7 +1,7 @@
 <div id="widget-profile" class="widget widget-profile">
   <div class="widget-content">
     <div class="profile">
-      <a href="<%= url_for('about.html') %>"><img src="<%= theme.avatar %>" class="avatar"></a>
+      <a href="<%= url_for('about.html') %>"><img src="<%= url_for(theme.avatar) %>" class="avatar"></a>
       <span class="author"><%= config.author %></span>
     </div>
     <ul class="social-list clearfloat">
