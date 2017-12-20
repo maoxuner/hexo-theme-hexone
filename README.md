@@ -26,7 +26,7 @@ npm install hexo-generator-json-content --save
 
 ### 文件
 
-复制[source/pages](source/pages)整个目录到文章源码目录`source/`下（该目录下有`_posts`）。
+复制[source/pages](source/pages)以及[source/_data](source/_data)整个目录到文章源码目录`source/`下（该目录下有`_posts`）。
 
 **注意**
 
@@ -57,7 +57,7 @@ npm install hexo-generator-json-content --save
 
 ### 心情
 
-有时候只是想三言两语说说自己的心情，不想每次都创建一篇文章，但是又想有个好的展示效果。于是便有了这个功能——心情，类似于说说/微博的功能。修改对应的文章（source/pages/moods.md），按照yaml格式添加即可。
+有时候只是想三言两语说说自己的心情，不想每次都创建一篇文章，但是又想有个好的展示效果。于是便有了这个功能——心情，类似于说说/微博的功能。修改对应的数据（source/_data/moods.yml），按照yaml格式添加即可。
 
 ![心情](source/img/screenshots/moods.png)
 

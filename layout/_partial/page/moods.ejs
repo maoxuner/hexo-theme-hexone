@@ -1,7 +1,7 @@
 <article id="page-moods" class="page page-moods">
   <h1><%= __('moods') %></h1>
   <ul class="timeline">
-    <% post.moods.forEach(function(mood){ %>
+    <% site.data.moods.forEach(function(mood){ %>
       <li class="timeline-item">
         <h3 class="timeline-title"><%- typeof(mood.date) == 'string' ? mood.date : date(mood.date, config.date_format) %></h3>
         <div class="timeline-content">
