@@ -26,7 +26,7 @@ npm install hexo-generator-json-content --save
 
 ### 文件
 
-复制[source/pages](source/pages)以及[source/_data](source/_data)整个目录到文章源码目录`source/`下（该目录下有`_posts`）。
+复制[source/_pages](source/_pages)以及[source/_data](source/_data)整个目录到文章源码目录`source/`下（该目录下有`_posts`），并把`_pages`改名为`pages`，否则该目录下的文章将不会被渲染。
 
 **注意**
 
