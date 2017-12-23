@@ -2,4 +2,9 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="hidden">
+  <% for(var type in theme.statistics){ %>
+    <%- partial('_third/' + type, {data: theme.statistics[type]}) %>
+  <% } %>
+</div>
 <%- js('js/main') %>

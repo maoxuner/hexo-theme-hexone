@@ -142,10 +142,7 @@ $(function(){
     var jsonContent = new JsonContent();
     $('#widget-search-form').submit(function(){
         var keyword = $('#widget-search-keyword').val().toLowerCase();
-        if(keyword.length < 3){
-
-        }
-        else{
+        if(keyword.length > 0){
             jsonContent.doQuery(keyword);
         }
     });
