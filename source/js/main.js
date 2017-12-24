@@ -158,7 +158,7 @@ $(function(){
                 <li class="project-list-item">\
                   <div class="project-list-item-box clearfloat">\
                     <h3 class="project-name">\
-                      <a href="{%= o[i].html_url %}" target="_blank">{%= o[i].name %}</a>\
+                      <a href="{%= o[i].html_url %}" target="_blank" title="{%= o[i].name %}">{%= o[i].name %}</a>\
                     </h3>\
                     <p class="project-description" title="{%= o[i].description %}">{%= o[i].description %}</p>\
                     {% if(o[i].language){ %}<span class="project-language">{%= o[i].language %}</span>{% } %}\
