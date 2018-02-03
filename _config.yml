@@ -28,6 +28,7 @@ projects:
 
 statistics:
   cnzz:
+  baidu:
 
 less:
   compress: false
