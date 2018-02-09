@@ -1,15 +1,21 @@
 $(function(){
-    // 导航固定在顶部
+    // 导航固定在顶部，返回顶部
     var navbar = $('#navbar');
     var navOffset = navbar.offset().top;
+    var goToTop = $('.tools .go-to-top');
     $(window).scroll(function(){
         var scrollPos = $(window).scrollTop();
         if(scrollPos >= navOffset){
             navbar.addClass('navbar-fixed-top');
+            goToTop.show();
         }
         else{
             navbar.removeClass('navbar-fixed-top');
+            goToTop.hide();
         }
+    });
+    goToTop.click(function(){
+        $('html,body').animate({scrollTop: 0}, 100);
     });
 
     // 页脚置底
