@@ -1,1 +1,1 @@
-<a href="<%= url_for(config.archive_dir+date(post.date, '/YYYY/MM')) %>" class="date"><%= date(post.date) %></a>
+<a href="<%= url_for(config.archive_dir+date(post.date, '/YYYY/MM')) %>" class="date" title="<%= date(post.date, config.time_format) %>"><%= date(post.date, config.date_format) %></a>

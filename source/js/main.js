@@ -40,7 +40,7 @@ $(function(){
                 $('body').append('<script src="' + o.tmplJs + '"></script>');
                 o.tmplTag = true;
             }
-        }
+        };
 
         o.init = o.injectTmpl;
     };
