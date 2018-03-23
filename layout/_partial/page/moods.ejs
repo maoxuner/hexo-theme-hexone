@@ -1,9 +1,10 @@
 <article id="page-moods" class="page page-moods">
   <h1><%= __('moods') %></h1>
   <ul class="timeline">
+    <% hexoDateFormat = /\d{4}(\-\d{2}){2}\w(\d{2}\:){2}\d{2}\.\d{3}\w/; %>
     <% site.data.moods.forEach(function(mood){ %>
       <li class="timeline-item">
-        <h3 class="timeline-title"><%- typeof(mood.date) == 'string' ? mood.date : date(mood.date, config.date_format) %></h3>
+        <h3 class="timeline-title"><%- typeof(mood.date) == 'string' && hexoDateFormat.test(mood.date) == false ? mood.date : date(mood.date, config.date_format) %></h3>
         <div class="timeline-content">
           <p><%- mood.content %></p>
         </div>
